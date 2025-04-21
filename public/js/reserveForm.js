@@ -1,20 +1,41 @@
-// このファイルは「予約入力フォームの送信処理」を行います
-// 入力データを sessionStorage に保存し、confirm.html に遷移します
+// reserveForm.js - 予約データをフォームから取得し、GASに送信する処理
+// .env の GAS_URL を使ってデータを送信します
+// 送信成功後は thanks.html に遷移します
 
 document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("reserveForm");
+    const form = document.querySelector("form");
   
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
   
-      const name = document.getElementById("username").value;
-      const date = document.getElementById("reserveDate").value;
-      const time = document.getElementById("reserveTime").value;
+      const username = document.getElementById("username").value;
+      const reserveDate = document.getElementById("reserve-date").value;
+      const reserveTime = document.getElementById("reserve-time").value;
   
-      const reservation = { name, date, time };
+      const data = {
+        username,
+        reserveDate,
+        reserveTime,
+      };
   
-      sessionStorage.setItem("currentReservation", JSON.stringify(reservation));
-      window.location.href = "/confirm.html";
+      try {
+        alert("GAS送信中...");
+  
+        const response = await fetch(import.meta.env.VITE_GAS_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+  
+        // 成功したらサンクスページへ遷移
+        window.location.href = "/thanks.html";
+      } catch (error) {
+        console.error("GAS送信失敗:", error);
+        alert("予約送信に失敗しました。もう一度お試しください。");
+      }
     });
   });
   

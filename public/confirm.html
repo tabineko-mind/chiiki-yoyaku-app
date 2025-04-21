@@ -1,6 +1,5 @@
 <!--
-このファイルは「予約内容の確認画面」です。
-sessionStorage に保存された予約情報を表示します。
+confirm.html - 入力内容の確認ページ
 -->
 
 <!DOCTYPE html>
@@ -13,9 +12,9 @@ sessionStorage に保存された予約情報を表示します。
 <body>
   <h1>このページは「確認」画面です！</h1>
 
-  <div id="confirmDisplay">
-    <p>読み込み中...</p>
-  </div>
+  <p><strong>お名前：</strong> <span id="display-username"></span></p>
+  <p><strong>予約日：</strong> <span id="display-reserve-date"></span></p>
+  <p><strong>時間：</strong> <span id="display-reserve-time"></span></p>
 
   <form action="/thanks.html" method="get">
     <button type="submit">▶ この内容で予約する</button>

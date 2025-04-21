@@ -1,20 +1,14 @@
-// このファイルは確認画面で予約情報を表示するためのJSです
+// confirmDisplay.js - 入力内容を確認画面に表示するスクリプト
+// sessionStorage から予約情報を取得して表示する
 
 document.addEventListener("DOMContentLoaded", () => {
-    const display = document.getElementById("confirmDisplay");
+    const username = sessionStorage.getItem("username");
+    const reserveDate = sessionStorage.getItem("reserveDate");
+    const reserveTime = sessionStorage.getItem("reserveTime");
   
-    const data = sessionStorage.getItem("currentReservation");
-    if (!data) {
-      display.innerHTML = "<p>予約情報が見つかりません。</p>";
-      return;
-    }
-  
-    const { name, date, time } = JSON.parse(data);
-  
-    display.innerHTML = `
-      <p><strong>お名前：</strong> ${name}</p>
-      <p><strong>予約日：</strong> ${date}</p>
-      <p><strong>時間：</strong> ${time}</p>
-    `;
+    // 表示用の要素を取得して、データを挿入
+    document.getElementById("display-username").textContent = username || "未入力";
+    document.getElementById("display-reserve-date").textContent = reserveDate || "未選択";
+    document.getElementById("display-reserve-time").textContent = reserveTime || "未選択";
   });
   

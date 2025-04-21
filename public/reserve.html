@@ -1,6 +1,5 @@
 <!--
-このファイルは「予約入力」画面のHTMLです。
-目的：ユーザーが名前・日付・時間を入力し、確認ページへ進む
+reserve.html - ユーザーが予約情報を入力するページ
 -->
 
 <!DOCTYPE html>
@@ -13,25 +12,23 @@
 <body>
   <h1>このページは「予約入力」画面です！</h1>
 
-  <form id="reserveForm">
+  <form id="reserve-form">
     <p>
       <label for="username">お名前：</label>
-      <input type="text" id="username" name="username" required>
+      <input type="text" id="username" required>
     </p>
     <p>
-      <label for="reserveDate">予約日：</label>
-      <input type="date" id="reserveDate" name="reserveDate" required>
+      <label for="reserve-date">予約日：</label>
+      <input type="date" id="reserve-date" required>
     </p>
     <p>
-      <label for="reserveTime">時間：</label>
-      <input type="time" id="reserveTime" name="reserveTime" required>
+      <label for="reserve-time">時間：</label>
+      <input type="time" id="reserve-time" required>
     </p>
     <p>
       <button type="submit">▶ 確認ページへ進む</button>
     </p>
   </form>
-
-  <p><a href="/">🏠 トップページへ戻る</a></p>
 
   <script src="/js/reserveForm.js"></script>
 </body>

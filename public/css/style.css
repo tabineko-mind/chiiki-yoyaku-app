@@ -1,0 +1,48 @@
+/* style.css - 全体の共通デザイン定義ファイル */
+
+body {
+    font-family: sans-serif;
+    margin: 2em;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+  }
+  
+  h1 {
+    color: #2c3e50;
+  }
+  
+  form {
+    background-color: #fff;
+    padding: 1em;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    max-width: 500px;
+  }
+  
+  input, button {
+    padding: 0.5em;
+    font-size: 1em;
+    margin-top: 0.5em;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #2980b9;
+  }
+  
+  a {
+    display: inline-block;
+    margin-top: 1em;
+    text-decoration: none;
+    color: #3498db;
+  }
+  
