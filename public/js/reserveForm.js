@@ -21,7 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
       try {
         alert("GAS送信中...");
   
-        const response = await fetch(import.meta.env.VITE_GAS_URL, {
+        const response = await fetch("https://script.google.com/macros/s/AKfycbwOCI4XsqbxAPIJdxUVy_Sh1-Ii4_fI9Fj125y0ukA/exec", {
+
           method: "POST",
           mode: "no-cors",
           headers: {
