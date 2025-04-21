@@ -1,1 +1,28 @@
-<!-- confirm.html - 初期スタブファイル -->
+<!--
+このファイルは「予約内容の確認画面」です。
+sessionStorage に保存された予約情報を表示します。
+-->
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>確認ページ</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1>このページは「確認」画面です！</h1>
+
+  <div id="confirmDisplay">
+    <p>読み込み中...</p>
+  </div>
+
+  <form action="/thanks.html" method="get">
+    <button type="submit">▶ この内容で予約する</button>
+  </form>
+
+  <p><a href="/reserve.html">🔙 予約ページに戻る</a></p>
+
+  <script src="/js/confirmDisplay.js"></script>
+</body>
+</html>
